@@ -7,6 +7,9 @@
 [![SDG Innovator](https://img.shields.io/badge/SDG-Innovator-00a8ff)](https://sdgs.un.org)
 [![Sovereign Design](https://img.shields.io/badge/Sovereign-Design-red)](https://teosegypt.com/sovereign)
 [![License: TEOS-Compliant](https://img.shields.io/badge/License-TEOS--Compliant-yellow)](LICENSE)
+![License](https://img.shields.io/badge/license-PolyForm%20NC%20%2B%20TESL-red?style=for-the-badge)
+![Status](https://img.shields.io/badge/status-Active-blue?style=for-the-badge)
+![Governance](https://img.shields.io/badge/governance-Sovereign%20Overlay-gold?style=for-the-badge)
 
 ### 🏛️ الرؤية
 بناء أول منصة مراسلة مشفرة سيادية في مصر
