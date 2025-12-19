@@ -1,38 +1,44 @@
 
-export enum ComplianceStatus {
-  PASSED = 'PASSED',
-  FLAGGED = 'FLAGGED',
-  BLOCKED = 'BLOCKED',
-  PENDING = 'PENDING'
+export type UserRole = 'CIVILIAN' | 'GOVERNMENT' | 'ENTERPRISE';
+
+export interface GroundingSource {
+  title: string;
+  uri: string;
 }
 
-export interface GuardAuditLog {
+export interface Message {
   id: string;
-  timestamp: string;
-  action: string;
-  source: string;
-  status: ComplianceStatus;
-  details: string;
-  explainabilityScore: number;
+  senderId: string;
+  text: string;
+  timestamp: number;
+  type: 'TEXT' | 'FILE' | 'SYSTEM' | 'MINUTES' | 'IMAGE' | 'VIDEO';
+  mediaUrl?: string;
+  groundingSources?: GroundingSource[];
+  isThinking?: boolean;
+  disappearing?: boolean;
+  expiresAt?: number;
 }
 
-export interface SecurityMetric {
+export interface ChatRoom {
+  id: string;
   name: string;
-  value: number;
-  change: number;
-  trend: 'up' | 'down' | 'stable';
+  participants: TeosUser[];
+  type: 'DIRECT' | 'GROUP' | 'CIVIC';
+  messages: Message[];
+  lastMessage?: string;
+  unreadCount: number;
 }
 
-export interface SDGAlignment {
-  goal: string;
-  score: number;
-  color: string;
+export enum CivicActionType {
+  MEETING_MINUTES = 'MEETING_MINUTES',
+  POLICY_DRAFT = 'POLICY_DRAFT',
+  INCIDENT_REPORT = 'INCIDENT_REPORT'
 }
 
-export interface AIResponse {
-  decision: ComplianceStatus;
-  routing: string;
-  explanation: string;
-  filteredPrompt: string;
-  sdgImpact: string;
+export interface TeosUser {
+  id: string;
+  handle: string;
+  publicKey: string;
+  role: UserRole;
+  isVerified: boolean;
 }
